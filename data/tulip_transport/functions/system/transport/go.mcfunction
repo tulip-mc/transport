@@ -4,7 +4,7 @@
 
 # summon slime to be ridden by player
 ## ~~needs to be assigned uuid (hence the tag)~~
-summon slime ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,PersistenceRequired:1b,NoAI:1b,Tags:["gateway.transporter","gateway.transporter.to_assign"]}
+summon area_effect_cloud ~ ~ ~ {Particle:{type:"block",block_state:"minecraft:air"},Radius:0f,Age:2147483647,Tags:["gateway.transporter","gateway.transporter.to_assign"]}
 
 # copy gateway type
 ## required to transport you to the right gateway
