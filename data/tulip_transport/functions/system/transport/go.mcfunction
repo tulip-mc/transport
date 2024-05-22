@@ -8,8 +8,18 @@ summon area_effect_cloud ~ ~ ~ {Particle:{type:"block",block_state:"minecraft:ai
 
 # copy gateway type
 ## required to transport you to the right gateway
-execute if entity @s[tag=gateway.type_1] run tag @e[tag=gateway.transporter.to_assign,limit=1] add gateway.transporter.type_1
-execute if entity @s[tag=gateway.type_2] run tag @e[tag=gateway.transporter.to_assign,limit=1] add gateway.transporter.type_2
+execute if entity @s[tag=gateway.type_1] run tag @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest] add gateway.transporter.type_1
+execute if entity @s[tag=gateway.type_2] run tag @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest] add gateway.transporter.type_2
+
+scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest] tulip_transport.gateway.location = @s tulip_transport.gateway.location
+
+
+# face correct direction
+## location 1
+execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_1,scores={tulip_transport.gateway.location=1}] at @s facing entity @e[tag=gateway.type_2,scores={tulip_transport.gateway.location=1}] eyes run tp ~ ~ ~
+# -
+execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_2,scores={tulip_transport.gateway.location=1}] at @s facing entity @e[tag=gateway.type_1,scores={tulip_transport.gateway.location=1}] eyes run tp ~ ~ ~
+
 
 # assign uuid to player
 #execute as @a[tag=gateway.player_to_transport,limit=1,sort=nearest] run scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1] temp_store.uuid.0 = @s temp_store.uuid.0
@@ -18,10 +28,13 @@ execute if entity @s[tag=gateway.type_2] run tag @e[tag=gateway.transporter.to_a
 #execute as @a[tag=gateway.player_to_transport,limit=1,sort=nearest] run scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1] temp_store.uuid.3 = @s temp_store.uuid.3
 
 # get player to ride
-ride @a[tag=gateway.player_to_transport,limit=1,sort=nearest] mount @e[tag=gateway.transporter.to_assign,limit=1]
+ride @a[tag=gateway.player_to_transport,limit=1,sort=nearest] mount @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest]
 
 # add player on cooldown
+scoreboard players reset @a[tag=gateway.player_to_transport,limit=1,sort=nearest] temp_store.gateway.player_on_cooldown_timer
 tag @a[tag=gateway.player_to_transport,limit=1,sort=nearest] add gateway.player_on_cooldown
 
 tag @a[tag=gateway.player_to_transport,limit=1,sort=nearest] remove gateway.player_to_transport
-tag @e[tag=gateway.transporter.to_assign,limit=1] remove gateway.transporter.to_assign
+tag @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest] remove gateway.transporter.to_assign
+
+tag @s remove gateway.to_transport_player
