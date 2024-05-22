@@ -4,8 +4,7 @@
 # transport
 execute as @e[tag=gateway.generic] at @s run particle minecraft:portal ~ ~ ~ 0.6 0.6 0.6 0.2 4
 ## player inside?
-execute as @e[tag=gateway.generic,tag=!gateway.to_transport_player] at @s as @a[distance=..2.2,limit=1,tag=!gateway.player_on_cooldown] run tag @s add gateway.player_to_transport
-execute as @e[tag=gateway.generic,tag=!gateway.to_transport_player] at @s if entity @a[distance=..2.2,limit=1,tag=!gateway.player_on_cooldown] run tag @s add gateway.to_transport_player
+execute as @e[tag=gateway.generic,tag=!gateway.to_transport_player] at @s if entity @a[distance=..2.2,limit=1,tag=!gateway.player_on_cooldown] run function tulip_transport:system/transport/check
 
 execute as @e[tag=gateway.to_transport_player] at @s run function tulip_transport:system/transport/go
 
