@@ -8,3 +8,6 @@ scoreboard objectives add temp_store.gateway.transporter_to_kill_timer dummy
 scoreboard players set gateway.transporter_kill tulip.config 7
 
 scoreboard objectives add tulip_transport.gateway.location dummy
+
+
+execute as @e[tag=gateway.generic] at @s run setblock ~ ~ ~ light[level=15]
