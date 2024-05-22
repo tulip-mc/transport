@@ -22,13 +22,14 @@ execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway
 
 
 # assign uuid to player
-#execute as @a[tag=gateway.player_to_transport,limit=1,sort=nearest] run scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1] temp_store.uuid.0 = @s temp_store.uuid.0
-#execute as @a[tag=gateway.player_to_transport,limit=1,sort=nearest] run scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1] temp_store.uuid.1 = @s temp_store.uuid.1
-#execute as @a[tag=gateway.player_to_transport,limit=1,sort=nearest] run scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1] temp_store.uuid.2 = @s temp_store.uuid.2
-#execute as @a[tag=gateway.player_to_transport,limit=1,sort=nearest] run scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1] temp_store.uuid.3 = @s temp_store.uuid.3
+execute as @a[tag=gateway.player_to_transport,limit=1,sort=nearest] run scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1] temp_store.uuid.0 = @s temp_store.uuid.0
+execute as @a[tag=gateway.player_to_transport,limit=1,sort=nearest] run scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1] temp_store.uuid.1 = @s temp_store.uuid.1
+execute as @a[tag=gateway.player_to_transport,limit=1,sort=nearest] run scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1] temp_store.uuid.2 = @s temp_store.uuid.2
+execute as @a[tag=gateway.player_to_transport,limit=1,sort=nearest] run scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1] temp_store.uuid.3 = @s temp_store.uuid.3
 
 # get player to ride
-ride @a[tag=gateway.player_to_transport,limit=1,sort=nearest] mount @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest]
+## choppy at updating :(
+#ride @a[tag=gateway.player_to_transport,limit=1,sort=nearest] mount @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest]
 
 # add player on cooldown
 scoreboard players reset @a[tag=gateway.player_to_transport,limit=1,sort=nearest] temp_store.gateway.player_on_cooldown_timer
