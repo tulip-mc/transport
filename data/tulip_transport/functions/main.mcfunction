@@ -1,7 +1,7 @@
 # tulip main loop
 
 
-# transporta
+# transport
 execute as @e[type=minecraft:area_effect_cloud,tag=gateway.generic] at @s if entity @p[distance=..15] run particle minecraft:portal ~ ~ ~ 0.6 0.6 0.6 0.2 4
 ## player inside?
 execute as @e[type=minecraft:area_effect_cloud,tag=gateway.generic,tag=!gateway.to_transport_player] at @s if entity @a[distance=..2.2,limit=1,tag=!gateway.player_on_cooldown] run function tulip_transport:system/transport/check
@@ -18,8 +18,22 @@ execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter] at @s ru
 
 ## location 1
 execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter.type_1,scores={tulip_transport.gateway.location=1}] at @s if entity @e[type=minecraft:area_effect_cloud,tag=gateway.type_2,scores={tulip_transport.gateway.location=1},distance=..1.2] run function tulip_transport:system/transport/finish
-# -
 execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter.type_2,scores={tulip_transport.gateway.location=1}] at @s if entity @e[type=minecraft:area_effect_cloud,tag=gateway.type_1,scores={tulip_transport.gateway.location=1},distance=..1.2] run function tulip_transport:system/transport/finish
+## location 2
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter.type_1,scores={tulip_transport.gateway.location=2}] at @s if entity @e[type=minecraft:area_effect_cloud,tag=gateway.type_2,scores={tulip_transport.gateway.location=2},distance=..1.2] run function tulip_transport:system/transport/finish
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter.type_2,scores={tulip_transport.gateway.location=2}] at @s if entity @e[type=minecraft:area_effect_cloud,tag=gateway.type_1,scores={tulip_transport.gateway.location=2},distance=..1.2] run function tulip_transport:system/transport/finish
+## location 3
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter.type_1,scores={tulip_transport.gateway.location=3}] at @s if entity @e[type=minecraft:area_effect_cloud,tag=gateway.type_2,scores={tulip_transport.gateway.location=3},distance=..1.2] run function tulip_transport:system/transport/finish
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter.type_2,scores={tulip_transport.gateway.location=3}] at @s if entity @e[type=minecraft:area_effect_cloud,tag=gateway.type_1,scores={tulip_transport.gateway.location=3},distance=..1.2] run function tulip_transport:system/transport/finish
+## location 4
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter.type_1,scores={tulip_transport.gateway.location=4}] at @s if entity @e[type=minecraft:area_effect_cloud,tag=gateway.type_2,scores={tulip_transport.gateway.location=4},distance=..1.2] run function tulip_transport:system/transport/finish
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter.type_2,scores={tulip_transport.gateway.location=4}] at @s if entity @e[type=minecraft:area_effect_cloud,tag=gateway.type_1,scores={tulip_transport.gateway.location=4},distance=..1.2] run function tulip_transport:system/transport/finish
+## location 5
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter.type_1,scores={tulip_transport.gateway.location=5}] at @s if entity @e[type=minecraft:area_effect_cloud,tag=gateway.type_2,scores={tulip_transport.gateway.location=5},distance=..1.2] run function tulip_transport:system/transport/finish
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter.type_2,scores={tulip_transport.gateway.location=5}] at @s if entity @e[type=minecraft:area_effect_cloud,tag=gateway.type_1,scores={tulip_transport.gateway.location=5},distance=..1.2] run function tulip_transport:system/transport/finish
+## location 6
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter.type_1,scores={tulip_transport.gateway.location=6}] at @s if entity @e[type=minecraft:area_effect_cloud,tag=gateway.type_2,scores={tulip_transport.gateway.location=6},distance=..1.2] run function tulip_transport:system/transport/finish
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter.type_2,scores={tulip_transport.gateway.location=6}] at @s if entity @e[type=minecraft:area_effect_cloud,tag=gateway.type_1,scores={tulip_transport.gateway.location=6},distance=..1.2] run function tulip_transport:system/transport/finish
 
 
 # player cooldown timer
