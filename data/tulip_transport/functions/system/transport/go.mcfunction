@@ -17,8 +17,22 @@ scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1,sort=n
 # face correct direction
 ## location 1
 execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_1,scores={tulip_transport.gateway.location=1}] at @s facing entity @e[tag=gateway.type_2,scores={tulip_transport.gateway.location=1}] eyes run tp ~ ~ ~
-# -
 execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_2,scores={tulip_transport.gateway.location=1}] at @s facing entity @e[tag=gateway.type_1,scores={tulip_transport.gateway.location=1}] eyes run tp ~ ~ ~
+## location 1
+execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_1,scores={tulip_transport.gateway.location=2}] at @s facing entity @e[tag=gateway.type_2,scores={tulip_transport.gateway.location=2}] eyes run tp ~ ~ ~
+execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_2,scores={tulip_transport.gateway.location=2}] at @s facing entity @e[tag=gateway.type_1,scores={tulip_transport.gateway.location=2}] eyes run tp ~ ~ ~
+## location 1
+execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_1,scores={tulip_transport.gateway.location=3}] at @s facing entity @e[tag=gateway.type_2,scores={tulip_transport.gateway.location=3}] eyes run tp ~ ~ ~
+execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_2,scores={tulip_transport.gateway.location=3}] at @s facing entity @e[tag=gateway.type_1,scores={tulip_transport.gateway.location=3}] eyes run tp ~ ~ ~
+## location 1
+execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_1,scores={tulip_transport.gateway.location=4}] at @s facing entity @e[tag=gateway.type_2,scores={tulip_transport.gateway.location=4}] eyes run tp ~ ~ ~
+execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_2,scores={tulip_transport.gateway.location=4}] at @s facing entity @e[tag=gateway.type_1,scores={tulip_transport.gateway.location=4}] eyes run tp ~ ~ ~
+## location 1
+execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_1,scores={tulip_transport.gateway.location=5}] at @s facing entity @e[tag=gateway.type_2,scores={tulip_transport.gateway.location=5}] eyes run tp ~ ~ ~
+execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_2,scores={tulip_transport.gateway.location=5}] at @s facing entity @e[tag=gateway.type_1,scores={tulip_transport.gateway.location=5}] eyes run tp ~ ~ ~
+## location 1
+execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_1,scores={tulip_transport.gateway.location=6}] at @s facing entity @e[tag=gateway.type_2,scores={tulip_transport.gateway.location=6}] eyes run tp ~ ~ ~
+execute as @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest,tag=gateway.transporter.type_2,scores={tulip_transport.gateway.location=6}] at @s facing entity @e[tag=gateway.type_1,scores={tulip_transport.gateway.location=6}] eyes run tp ~ ~ ~
 
 
 # assign uuid to player

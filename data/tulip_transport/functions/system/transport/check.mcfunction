@@ -12,8 +12,22 @@ execute if score @s tulip_transport.gateway.location matches 0.. run scoreboard 
 # is there an accompanying gateway?
 ## location 1
 execute if entity @s[tag=gateway.type_1,scores={tulip_transport.gateway.location=1}] if entity @e[tag=gateway.type_2,scores={tulip_transport.gateway.location=1}] run scoreboard players set @s temp_store.gateway.has_accompanying_gateway 1
-# -
 execute if entity @s[tag=gateway.type_2,scores={tulip_transport.gateway.location=1}] if entity @e[tag=gateway.type_1,scores={tulip_transport.gateway.location=1}] run scoreboard players set @s temp_store.gateway.has_accompanying_gateway 1
+## location 2
+execute if entity @s[tag=gateway.type_1,scores={tulip_transport.gateway.location=2}] if entity @e[tag=gateway.type_2,scores={tulip_transport.gateway.location=2}] run scoreboard players set @s temp_store.gateway.has_accompanying_gateway 1
+execute if entity @s[tag=gateway.type_2,scores={tulip_transport.gateway.location=2}] if entity @e[tag=gateway.type_1,scores={tulip_transport.gateway.location=2}] run scoreboard players set @s temp_store.gateway.has_accompanying_gateway 1
+## location 3
+execute if entity @s[tag=gateway.type_1,scores={tulip_transport.gateway.location=3}] if entity @e[tag=gateway.type_2,scores={tulip_transport.gateway.location=3}] run scoreboard players set @s temp_store.gateway.has_accompanying_gateway 1
+execute if entity @s[tag=gateway.type_2,scores={tulip_transport.gateway.location=3}] if entity @e[tag=gateway.type_1,scores={tulip_transport.gateway.location=3}] run scoreboard players set @s temp_store.gateway.has_accompanying_gateway 1
+## location 4
+execute if entity @s[tag=gateway.type_1,scores={tulip_transport.gateway.location=4}] if entity @e[tag=gateway.type_2,scores={tulip_transport.gateway.location=4}] run scoreboard players set @s temp_store.gateway.has_accompanying_gateway 1
+execute if entity @s[tag=gateway.type_2,scores={tulip_transport.gateway.location=4}] if entity @e[tag=gateway.type_1,scores={tulip_transport.gateway.location=4}] run scoreboard players set @s temp_store.gateway.has_accompanying_gateway 1
+## location 5
+execute if entity @s[tag=gateway.type_1,scores={tulip_transport.gateway.location=5}] if entity @e[tag=gateway.type_2,scores={tulip_transport.gateway.location=5}] run scoreboard players set @s temp_store.gateway.has_accompanying_gateway 1
+execute if entity @s[tag=gateway.type_2,scores={tulip_transport.gateway.location=5}] if entity @e[tag=gateway.type_1,scores={tulip_transport.gateway.location=5}] run scoreboard players set @s temp_store.gateway.has_accompanying_gateway 1
+## location 6
+execute if entity @s[tag=gateway.type_1,scores={tulip_transport.gateway.location=6}] if entity @e[tag=gateway.type_2,scores={tulip_transport.gateway.location=6}] run scoreboard players set @s temp_store.gateway.has_accompanying_gateway 1
+execute if entity @s[tag=gateway.type_2,scores={tulip_transport.gateway.location=6}] if entity @e[tag=gateway.type_1,scores={tulip_transport.gateway.location=6}] run scoreboard players set @s temp_store.gateway.has_accompanying_gateway 1
 
 
 # add up
