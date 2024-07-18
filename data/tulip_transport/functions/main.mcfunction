@@ -3,8 +3,10 @@
 
 # transport
 execute as @e[type=minecraft:area_effect_cloud,tag=gateway.generic] at @s if entity @p[distance=..15] run particle minecraft:portal ~ ~ ~ 0.6 0.6 0.6 0.2 4
+## player nearby, but invalid
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.generic,tag=!gateway.to_transport_player] at @s run scoreboard players reset @a[scores={temp_store.gateway.player_crouch_to_confirm=0..},distance=3..10] temp_store.gateway.player_crouch_to_confirm
 ## player inside?
-execute as @e[type=minecraft:area_effect_cloud,tag=gateway.generic,tag=!gateway.to_transport_player] at @s if entity @a[distance=..2.2,limit=1,tag=!gateway.player_on_cooldown] run function tulip_transport:system/transport/check
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.generic,tag=!gateway.to_transport_player] at @s if entity @a[distance=..2.2,limit=1,tag=!gateway.player_on_cooldown,scores={temp_store.gateway.player_crouch_to_confirm=1..}] run function tulip_transport:system/transport/check
 
 execute as @e[type=minecraft:area_effect_cloud,tag=gateway.to_transport_player] at @s run function tulip_transport:system/transport/go
 

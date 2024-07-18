@@ -18,4 +18,8 @@ scoreboard objectives add tulip_transport.gateway.location dummy
 scoreboard objectives add tulip_transport.gateway.identifier dummy
 
 
+# crouch to confirm
+scoreboard objectives add temp_store.gateway.player_crouch_to_confirm minecraft.custom:minecraft.sneak_time
+
+
 execute as @e[tag=gateway.generic] at @s run setblock ~ ~ ~ light[level=15]
