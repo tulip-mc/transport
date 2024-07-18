@@ -12,6 +12,7 @@ execute if entity @s[tag=gateway.type_1] run tag @e[tag=gateway.transporter.to_a
 execute if entity @s[tag=gateway.type_2] run tag @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest] add gateway.transporter.type_2
 
 scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest] tulip_transport.gateway.location = @s tulip_transport.gateway.location
+scoreboard players operation @e[tag=gateway.transporter.to_assign,limit=1,sort=nearest] tulip_transport.gateway.identifier = @s tulip_transport.gateway.identifier
 
 
 # face correct direction
