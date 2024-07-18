@@ -16,9 +16,9 @@ execute as @e[type=minecraft:area_effect_cloud,tag=gateway.to_transport_player] 
 # teleport transporter
 execute as @a[tag=gateway.player_on_cooldown] at @s if entity @e[type=minecraft:area_effect_cloud,tag=gateway.transporter,distance=..3] if score @e[type=minecraft:area_effect_cloud,tag=gateway.transporter,distance=..3,limit=1] temp_store.uuid.0 = @s temp_store.uuid.0 if score @e[type=minecraft:area_effect_cloud,tag=gateway.transporter,distance=..3,limit=1] temp_store.uuid.1 = @s temp_store.uuid.1 if score @e[type=minecraft:area_effect_cloud,tag=gateway.transporter,distance=..3,limit=1] temp_store.uuid.2 = @s temp_store.uuid.2 if score @e[type=minecraft:area_effect_cloud,tag=gateway.transporter,distance=..3,limit=1] temp_store.uuid.3 = @s temp_store.uuid.3 run tp @s @e[type=minecraft:area_effect_cloud,tag=gateway.transporter,distance=..3,limit=1]
 
-execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter] at @s run tp ^ ^ ^0.75
-execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter] at @s run playsound minecraft:ambient.crimson_forest.mood player @a ~ ~ ~ 0.2
-execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter] at @s run particle minecraft:cloud ~ ~0.5 ~ 0 0.1 0 0 6
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter,tag=!gateway.transporter_to_kill] at @s run tp ^ ^ ^0.75
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter,tag=!gateway.transporter_to_kill] at @s run playsound minecraft:ambient.crimson_forest.mood player @a ~ ~ ~ 0.2
+execute as @e[type=minecraft:area_effect_cloud,tag=gateway.transporter,tag=!gateway.transporter_to_kill] at @s run particle minecraft:cloud ~ ~0.5 ~ 0 0.1 0 0 6
 
 
 ## location 1
