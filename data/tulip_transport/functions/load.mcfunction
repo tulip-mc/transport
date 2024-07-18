@@ -11,7 +11,11 @@ scoreboard players set gateway.player_cooldown tulip.config 80
 scoreboard objectives add temp_store.gateway.transporter_to_kill_timer dummy
 scoreboard players set gateway.transporter_kill tulip.config 7
 
+
+# used to link gateways together
 scoreboard objectives add tulip_transport.gateway.location dummy
+# used to notify user of arrival on island
+scoreboard objectives add tulip_transport.gateway.identifier dummy
 
 
 execute as @e[tag=gateway.generic] at @s run setblock ~ ~ ~ light[level=15]
