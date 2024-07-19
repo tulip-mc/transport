@@ -37,6 +37,7 @@ scoreboard players operation @s temp_store.gateway.is_valid += @s temp_store.gat
 
 # errors
 ## main
+execute unless score @s temp_store.gateway.is_valid matches 2 run scoreboard players reset @s temp_store.gateway.player_crouch_to_confirm
 execute unless score @s temp_store.gateway.is_valid matches 2 run playsound block.note_block.bass player @a[distance=..2.2,limit=1,sort=nearest] ~ ~ ~
 execute unless score @s temp_store.gateway.is_valid matches 2 as @a[distance=..2.2,limit=1,sort=nearest] run function tulip_transport:system/cooldown/force
 ## individual
