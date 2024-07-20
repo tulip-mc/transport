@@ -38,7 +38,7 @@ scoreboard players operation @s temp_store.gateway.is_valid += @s temp_store.gat
 # errors
 ## main
 execute unless score @s temp_store.gateway.is_valid matches 2 run scoreboard players reset @a[distance=..2.2,limit=1,sort=nearest] temp_store.gateway.player_crouch_to_confirm
-execute unless score @s temp_store.gateway.is_valid matches 2 run playsound block.note_block.bass player @a[distance=..2.2,limit=1,sort=nearest] ~ ~ ~
+execute unless score @s temp_store.gateway.is_valid matches 2 run playsound tulip:interaction.fail player @a[distance=..2.2,limit=1,sort=nearest] ~ ~ ~
 execute unless score @s temp_store.gateway.is_valid matches 2 as @a[distance=..2.2,limit=1,sort=nearest] run function tulip_transport:system/cooldown/force
 ## individual
 execute unless score @s temp_store.gateway.has_location matches 1.. run tellraw @a[distance=..2.2,limit=1,sort=nearest] ["",{"text":"[","color":"dark_gray"},{"text":"→","color":"red"},{"text":"] ","color":"dark_gray"},{"text":"This gateway cannot transport due to a missing linked location id.","color":"red"}]
